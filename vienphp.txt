@@ -15,4 +15,6 @@ ${SUDO} ufw --force enable
 ${SUDO} ufw allow in "Apache Full"
 ${SUDO} apt-get install php8.0-{cli,fpm,xdebug,pcov,dev,curl,mysqlnd,gd,opcache,zip,intl,common,bcmath,imagick,xmlrpc,readline,memcached,redis,mbstring,apcu,xml,dom,memcache} libapache2-mod-php8.0 -y
 ${SUDO} apt-get install php8.0-fpm libapache2-mod-fcgid -y
+${SUDO} a2enmod actions fcgid alias proxy_fcgi
 ${SUDO} apt-get update
+${SUDO} systemctl restart apache2
